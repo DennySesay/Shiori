@@ -11,14 +11,11 @@ import (
 
 // addCmd represents the add command
 var addCmd = &cobra.Command{
-	Use:   "add",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Use:   "add [name] [path]",
+	Short: "Bookmark a new configuration file or directory",
+	Long: `Registers a local file or directory into the Shiori registry under a custom name.
+	The path can be absolute or relative.
+	If the name already exists, the command will fail unless you choose to overwrite it.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("add called")
 	},
