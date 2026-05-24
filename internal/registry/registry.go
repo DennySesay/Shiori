@@ -4,13 +4,19 @@ import (
 	"fmt"
 	"log"
 	"os"
+	path "path/filepath"
 )
 
-func FindConfig() {
+func GetRegistryPath() (string, error) {
 	dir, dirErr := os.UserConfigDir()
 	if dirErr != nil {
 		log.Fatal(dirErr)
-	} else {
-		fmt.Printf("config directory %v", dir)
 	}
+
+	var registryPath string = path.Join(dir, "shiori", "registry.json")
+	fmt.Println(registryPath)
+	return registryPath, dirErr
 }
+
+func LoadRegistry() {}
+func SaveRegistry() {}

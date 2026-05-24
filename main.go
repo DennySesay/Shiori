@@ -8,6 +8,6 @@ package main
 import "github.com/DennySesay/shiori/internal/registry"
 
 func main() {
-	registry.FindConfig()
+	registry.GetRegistryPath()
 	// cmd.Execute()
 }

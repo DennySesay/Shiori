@@ -1,7 +1,7 @@
 package internal
 
 type Entry struct {
-	name   string
-	path   string
-	editor string
+	Name   string
+	Path   string
+	Editor string
 }
