@@ -5,9 +5,9 @@ package main
 
 // import "github.com/DennySesay/shiori/cmd"
 
-import "github.com/DennySesay/shiori/internal/registry"
+import "github.com/DennySesay/shiori/internal/config"
 
 func main() {
-	registry.GetRegistryPath()
+	config.LoadConfig()
 	// cmd.Execute()
 }
