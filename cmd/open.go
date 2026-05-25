@@ -14,7 +14,7 @@ var openCmd = &cobra.Command{
 	Use:   "open [name]",
 	Short: "Open a bookmarked configuration in your editor",
 	Long: `Looks up the given name in your registry and opens the associated path.
-	Shiori uses the $EDITOR environment variable by default,
+	Phi uses the $EDITOR environment variable by default,
 	automatically falling back to standard editors if one is not set.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("open called")

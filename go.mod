@@ -1,4 +1,4 @@
-module github.com/DennySesay/shiori
+module github.com/DennySesay/phi
 
 go 1.26.3
 

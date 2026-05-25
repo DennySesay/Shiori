@@ -1,18 +1,18 @@
-# 栞 shiori
+# Phi
 
-> *Shiori (栞) is the Japanese word for bookmark — a mark that shows you the way back.*
+> *Find your configs. Instantly.*
 
-A CLI tool for managing and quickly opening configuration files. Instead of manually navigating to `~/.config` every time, you register your config files once and open them with a single command.
+A CLI tool for managing and quickly opening configuration files. Instead of manually navigating to `~/.config/`, `/etc/`, or hidden home directories every time, you register your config files once and open them with a single command.
 
 ```bash
-shiori open nvim
+phi nvim
 ```
 
 ---
 
 ## Motivation
 
-Config files are scattered all over the system — in `~/.config/`, `~/.local/`, `~/`, or `/etc/`. Shiori creates a central, named registry and gives you direct access by name, without having to remember paths.
+Config files are scattered all over the system. Phi creates a central, named registry (stored in a clean, readable TOML format) and gives you direct access by simple names, eliminating the need to remember complex paths.
 
 ---
 
@@ -22,30 +22,30 @@ Config files are scattered all over the system — in `~/.config/`, `~/.local/`,
 
 | Command | Description |
 |---|---|
-| `shiori add <name> <path>` | Register a config file or directory |
-| `shiori open <name>` | Open the entry in your configured editor |
-| `shiori list` | List all registered entries |
-| `shiori remove <name>` | Remove an entry from the registry |
+| `phi add <name> <path>` | Register a config file or directory |
+| `phi open <name>` | Open the entry in your configured editor |
+| `phi list` | List all registered entries |
+| `phi remove <name>` | Remove an entry from the registry |
 
-- Support for **both files and directories** (e.g. an entire Neovim config directory)
-- Falls back to `$EDITOR`, with an optional per-entry editor override
-- Registry stored at `~/.config/shiori/registry.json`
-- Helpful error messages (file not found, name already taken, etc.)
+- Support for **both files and directories** (e.g., an entire Neovim config directory)
+- Uses your `$EDITOR` environment variable by default, with support for per-entry overrides
+- Registry is safely stored at `~/.config/phi/registry.toml`
+- Clean, user-friendly error handling (file not found, name already taken, etc.)
 
 ### V2 – Planned Extensions
 
-- `shiori edit <name>` — update the path or editor of an existing entry
-- `shiori scan` — auto-discover known config files on the system
+- `phi edit <name>` — Update the path or editor of an existing entry
+- `phi scan` — Auto-discover known config files on the system
 - `--editor` flag on `open` to override the editor for a single invocation
-- Tags and groups (`shiori list --tag work`)
-- `shiori which <name>` — print only the path, useful for scripting
+- Tags and groups (`phi list --tag work`)
+- `phi which <name>` — Print only the absolute path (useful for shell scripting)
 - Shell completions (Bash, Zsh, Fish)
 
 ---
 
 ## Technology
 
-Written in **Go** using [Cobra](https://github.com/spf13/cobra) for CLI structure.
+Written in **Go** using [Cobra](https://github.com/spf13/cobra) for the CLI architecture and `go-toml/v2` for fast, allocation-free TOML parsing.
 
 ---
 

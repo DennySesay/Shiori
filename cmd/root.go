@@ -11,9 +11,9 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "shiori",
-	Short: "Shiori (栞) is a bookmark manager for your configuration files.",
-	Long: `Shiori acts as a central registry for your scattered configuration files and directories.
+	Use:   "phi",
+	Short: "Phi is a bookmark manager for your configuration files.",
+	Long: `Phi acts as a central registry for your scattered configuration files and directories.
 	Instead of navigating hidden folders across your system,
 	you can bookmark them once and open them instantly by name.`,
 	// Uncomment the following line if your bare application
@@ -35,7 +35,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.shiori.yaml)")
+	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.phi.yaml)")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.

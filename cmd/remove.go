@@ -13,7 +13,7 @@ import (
 var removeCmd = &cobra.Command{
 	Use:   "remove [name]",
 	Short: "Delete a bookmark from the registry",
-	Long: `Removes a named entry from the Shiori registry.
+	Long: `Removes a named entry from the Phi registry.
 	This only deletes the bookmark;
 	it does not touch or delete the actual configuration file on your disk.`,
 	Run: func(cmd *cobra.Command, args []string) {

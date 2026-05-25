@@ -13,7 +13,7 @@ import (
 var addCmd = &cobra.Command{
 	Use:   "add [name] [path]",
 	Short: "Bookmark a new configuration file or directory",
-	Long: `Registers a local file or directory into the Shiori registry under a custom name.
+	Long: `Registers a local file or directory into the Phi registry under a custom name.
 	The path can be absolute or relative.
 	If the name already exists, the command will fail unless you choose to overwrite it.`,
 	Run: func(cmd *cobra.Command, args []string) {

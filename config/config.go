@@ -8,9 +8,9 @@ import (
 	"github.com/pelletier/go-toml/v2"
 )
 
-type ShioriConfig struct {
-	ShioriSettings Settings                 `toml:"settings"`
-	Entry          map[string]RegistryEntry `toml:"registry"`
+type PhiConfig struct {
+	PhiSettings Settings                 `toml:"settings"`
+	Entry       map[string]RegistryEntry `toml:"registry"`
 }
 
 type Settings struct {
@@ -29,22 +29,22 @@ func GetConfig() (string, error) {
 		return "", dirErr
 	}
 
-	var registryPath string = path.Join(dir, "shiori", "config.toml")
+	var registryPath string = path.Join(dir, "phi", "config.toml")
 	return registryPath, dirErr
 }
 
-func LoadConfig() (ShioriConfig, error) {
+func LoadConfig() (PhiConfig, error) {
 	registryPath, err := GetConfig()
 	if err != nil {
-		return ShioriConfig{}, err
+		return PhiConfig{}, err
 	}
 
 	content, err := os.ReadFile(registryPath)
 
-	var config ShioriConfig
+	var config PhiConfig
 	err = toml.Unmarshal(content, &config)
 	if err != nil {
-		return ShioriConfig{}, err
+		return PhiConfig{}, err
 	}
 
 	fmt.Printf("%+v\n", config)
