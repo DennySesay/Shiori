@@ -53,4 +53,14 @@ func LoadConfig() (PhiConfig, error) {
 }
 
 func SaveRegistry(config *PhiConfig) (PhiConfig, error) {
+	config, err := LoadConfig()
+	if err != nil {
+		return PhiConfig{}, errors.New("Config could not be saved error")
+	}
+
+	b, err := toml.Marshal(config)
+	if err != nil {
+		return PhiConfig{},
+	}
+	return b, nil
 }
