@@ -52,4 +52,5 @@ func LoadConfig() (PhiConfig, error) {
 	return config, nil
 }
 
-func SaveRegistry() {}
+func SaveRegistry(config *PhiConfig) (PhiConfig, error) {
+}

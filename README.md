@@ -29,7 +29,7 @@ Config files are scattered all over the system. Phi creates a central, named reg
 
 - Support for **both files and directories** (e.g., an entire Neovim config directory)
 - Uses your `$EDITOR` environment variable by default, with support for per-entry overrides
-- Registry is safely stored at `~/.config/phi/registry.toml`
+- Registry is safely stored at `~/.config/phi/config.toml`
 - Clean, user-friendly error handling (file not found, name already taken, etc.)
 
 ### V2 – Planned Extensions
